@@ -66,8 +66,6 @@ import Annonce from "./components/Ads/Annonce.vue";
   grid-area: 2 / 2 / 3 / 3;
 }
 .market {
-  border: 2px solid green;
-
   grid-area: 3 / 2 / 4 / 3;
   margin-bottom: 1%;
   border-radius: 0px 0px $border-radius-home $border-radius-home;
