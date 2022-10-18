@@ -1,0 +1,26 @@
+<template>
+  <div>
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 23 23"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="0.895447"
+        y="11.2915"
+        width="15"
+        height="15"
+        transform="rotate(-43.8735 0.895447 11.2915)"
+        fill="#E4FAF2"
+      />
+    </svg>
+  </div>
+</template>
+<script lang="ts">
+export default {
+  name: "c-waves",
+};
+</script>
+<style lang=""></style>
