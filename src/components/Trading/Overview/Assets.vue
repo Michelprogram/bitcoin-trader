@@ -2,40 +2,39 @@
   <div class="c-assets" :style="style">
     <div class="header">
       <div class="first-line">
-        <p>{{ quantity }} {{ unite }}</p>
+        <p>{{ item.quantity }} {{ item.unite }}</p>
         <Dot />
       </div>
-      <p class="value">$ {{ value }}</p>
+      <p class="value">$ {{ item.value }}</p>
     </div>
     <div class="footer">
       <div class="logo">
-        <Bitcoin />
+        <component :is="dynamiIcon"></component>
       </div>
-      <p>+ {{ percentage }}%</p>
+      <p>+ {{ item.percentage }}%</p>
     </div>
   </div>
 </template>
 <script lang="ts">
 import Dot from "@/components/icons/Dot.vue";
-import Bitcoin from "@/components/icons/Crypto/Bitcoin.vue";
-import { defineComponent, type StyleValue } from "vue";
+import { defineComponent, type StyleValue, defineAsyncComponent } from "vue";
+import type { assets } from "@/types/components";
 export default defineComponent({
   name: "Assets",
   components: {
     Dot,
-    Bitcoin,
   },
   props: {
-    quantity: { type: String, required: true },
-    color: { type: String, required: true },
-    value: { type: String, required: true },
-    logo: { type: String, required: true },
-    percentage: { type: String, required: true },
-    unite: { type: String, required: true },
+    item: { type: Object as () => assets, required: true },
   },
   computed: {
     style(): StyleValue {
-      return `background-color:${this.color}`;
+      return `background-color:${this.item.color}`;
+    },
+    dynamiIcon() {
+      return defineAsyncComponent(
+        () => import(`../../icons/Crypto/${this.item.logo}.vue`)
+      );
     },
   },
 });
@@ -52,6 +51,7 @@ export default defineComponent({
   flex-direction: column;
   justify-content: space-around;
   gap: 10 px;
+
   .first-line,
   .footer {
     display: flex;

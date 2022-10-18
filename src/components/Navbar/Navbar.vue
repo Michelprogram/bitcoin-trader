@@ -10,7 +10,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import items from "@/constants/navbar";
+import { items } from "@/constants/components";
 import ItemVue from "@/components/Navbar/Item.vue";
 export default defineComponent({
   name: "navbar",

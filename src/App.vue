@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar/Navbar.vue";
 import Header from "./components/Header/Header.vue";
 import Market from "@/components/Trading/Market/Market.vue";
 import Annonce from "./components/Ads/Annonce.vue";
+import Overview from "./components/Trading/Overview/Overview.vue";
 </script>
 
 <template>
@@ -15,7 +16,9 @@ import Annonce from "./components/Ads/Annonce.vue";
     <div class="header">
       <Header />
     </div>
-    <div class="portofolio"></div>
+    <div class="portofolio">
+      <Overview />
+    </div>
     <div class="market">
       <Market />
     </div>
@@ -27,10 +30,10 @@ import Annonce from "./components/Ads/Annonce.vue";
 .parent {
   display: grid;
   grid-template-columns: 0.2fr 2fr;
-  grid-template-rows: 0.3fr repeat(2, 1fr);
+  grid-template-rows: 0.3fr 0.6fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  height: 150vh;
+  height: 130vh;
 }
 
 .header,
@@ -61,8 +64,6 @@ import Annonce from "./components/Ads/Annonce.vue";
   border-radius: $border-radius-home $border-radius-home 0px 0px;
 }
 .portofolio {
-  border: 2px solid blue;
-
   grid-area: 2 / 2 / 3 / 3;
 }
 .market {

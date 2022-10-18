@@ -17,7 +17,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import type { market } from "@/types/market";
+import type { market } from "@/types/components";
 import Star from "@/components/icons/Star.vue";
 export default defineComponent({
   name: "place",

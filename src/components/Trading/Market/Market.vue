@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="c-grid-market">
-      <Place v-for="(item, index) in market" :key="index" :item="item" />
+      <Place v-for="(item, index) in markets" :key="index" :item="item" />
     </div>
     <div class="c-ad">
       <Annonce class="annonce" />
@@ -21,14 +21,14 @@
 </template>
 <script lang="ts">
 import Place from "@/components/Trading/Market/Place.vue";
-import market from "@/constants/market";
+import { markets } from "@/constants/components";
 import { defineComponent } from "vue";
 import Annonce from "../../Ads/Annonce.vue";
 export default defineComponent({
   name: "Market",
   data() {
     return {
-      market,
+      markets,
     };
   },
   components: { Place, Annonce },
