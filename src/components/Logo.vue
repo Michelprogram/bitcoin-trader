@@ -29,14 +29,52 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 @import "@/assets/bases/index.scss";
+
+$radius: 23px;
+
 .c-logo {
   width: 70px;
   height: 70px;
 
   background-color: $beige;
-  border-radius: 23px;
+  border-radius: $radius;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-radius: 50px;
+    background-image: linear-gradient(
+      103deg,
+      rgba(152, 79, 31, 1) 0%,
+      rgba(66, 185, 66, 1) 100%
+    );
+
+    animation: pulse 3s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    width: 70px;
+    height: 70px;
+    filter: blur(12px);
+  }
+
+  50% {
+    width: 80px;
+    height: 80px;
+    filter: blur(20px);
+  }
+
+  100% {
+    width: 70px;
+    height: 70px;
+    filter: blur(12px);
+  }
 }
 </style>

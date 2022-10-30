@@ -1,6 +1,4 @@
 <script lang="ts">
-import Logo from "@/components/Logo.vue";
-import Navbar from "@/components/Navbar/Navbar.vue";
 import Header from "@/components/Header/Header.vue";
 import Market from "@/components/Trading/Market/Market.vue";
 import Annonce from "@/components/Ads/Annonce.vue";
@@ -9,8 +7,6 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "Home",
   components: {
-    Logo,
-    Navbar,
     Header,
     Market,
     Annonce,
@@ -21,10 +17,6 @@ export default defineComponent({
 
 <template>
   <div class="parent">
-    <div class="navbar">
-      <Logo />
-      <Navbar />
-    </div>
     <div class="header">
       <Header />
     </div>
@@ -39,13 +31,13 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import "@/assets/bases/index.scss";
+
 .parent {
   display: grid;
-  grid-template-columns: 0.2fr 2fr;
-  grid-template-rows: 0.3fr 0.6fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.3fr 0.9fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  height: 130vh;
 }
 
 .header,
@@ -60,26 +52,16 @@ export default defineComponent({
   }
 }
 
-.navbar {
-  grid-area: 1 / 1 / 6 / 2;
-  display: flex;
-  margin-top: 20%;
-  flex-direction: column;
-  height: 70%;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .header {
   margin-top: 1%;
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 1 / 1 / 2 / 2;
   border-radius: $border-radius-home $border-radius-home 0px 0px;
 }
 .portofolio {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 1 / 3 / 2;
 }
 .market {
-  grid-area: 3 / 2 / 4 / 3;
+  grid-area: 3 / 1 / 4 / 2;
   margin-bottom: 1%;
   border-radius: 0px 0px $border-radius-home $border-radius-home;
 }

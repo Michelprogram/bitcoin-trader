@@ -1,11 +1,6 @@
 <template>
   <div class="c-navbar">
-    <ItemVue
-      v-for="(item, index) in items"
-      :route="item.route"
-      :icon="item.icon"
-      :key="index"
-    />
+    <ItemVue v-for="(item, index) in items" :item="item" :key="index" />
   </div>
 </template>
 <script lang="ts">

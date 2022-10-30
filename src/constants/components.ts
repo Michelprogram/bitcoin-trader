@@ -51,23 +51,28 @@ export const markets: Array<market> = [
 
 export const items: Array<navbar> = [
   {
-    route: "/dashboard",
+    route: "/bitcoin-trader",
+    tab: "Dashboard",
     icon: BlocVue,
   },
   {
-    route: "/wallet",
+    route: "/bitcoin-trader/wallet",
+    tab: "Wallet",
     icon: WalletVue,
   },
   {
-    route: "/graph",
+    route: "/bitcoin-trader/graph",
+    tab: "Graph",
     icon: GraphVue,
   },
   {
-    route: "/blockchain",
+    route: "/bitcoin-trader/blockchain",
+    tab: "Blockchain",
     icon: CubeVue,
   },
   {
-    route: "/profil",
+    route: "/bitcoin-trader/profil",
+    tab: "Profil",
     icon: UserVue,
   },
 ];

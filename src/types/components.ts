@@ -25,5 +25,6 @@ export enum colors {
 
 export type navbar = {
   route: string;
+  tab: string;
   icon: Object;
 };
