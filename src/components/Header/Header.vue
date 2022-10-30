@@ -1,7 +1,7 @@
 <template>
   <div class="c-header">
     <div class="title">
-      <p>Overview</p>
+      <p>{{ title }}</p>
     </div>
     <div class="info-user">
       <Onglet icon="Search" />
@@ -11,16 +11,27 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, defineAsyncComponent } from "vue";
+import { defineComponent } from "vue";
 import Onglet from "./Onglet.vue";
 import Profil from "./Profil.vue";
 export default defineComponent({
   name: "Header",
+  data() {
+    return {
+      title: String,
+    };
+  },
+  watch: {
+    $route(to, from) {
+      this.title = from.name;
+    },
+  },
   components: { Onglet, Profil },
 });
 </script>
 <style lang="scss" scoped>
 @import "@/assets/bases/index.scss";
+@import "@/assets/animations/index.scss";
 
 .c-header {
   display: flex;
@@ -32,6 +43,9 @@ export default defineComponent({
     p {
       font-size: $title;
       font-weight: 700;
+      letter-spacing: 0.15rem;
+
+      animation: slideInTitle 0.5s ease-in;
     }
   }
   .info-user {
