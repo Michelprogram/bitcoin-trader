@@ -1,6 +1,6 @@
 <template>
   <div class="c-header">
-    <div class="title">
+    <div class="title" ref="title">
       <p>{{ title }}</p>
     </div>
     <div class="info-user">
@@ -23,7 +23,24 @@ export default defineComponent({
   },
   watch: {
     $route(to, from) {
+      this.triggerTitleClass();
       this.title = to.name;
+      this.triggerTitleClass();
+    },
+  },
+  methods: {
+    triggerTitleClass(): void {
+      const title = this.$refs.title as HTMLElement;
+      const classList = title.classList;
+      if (classList.contains("title")) {
+        title.classList.remove("title");
+        title.style.opacity = "0";
+      } else {
+        setTimeout(() => {
+          title.classList.add("title");
+          title.style.opacity = "1";
+        }, 100);
+      }
     },
   },
   components: { Onglet, Profil },
@@ -44,9 +61,9 @@ export default defineComponent({
       font-size: $title;
       font-weight: 700;
       letter-spacing: 0.15rem;
-
-      animation: slideInTitle 0.5s ease-in;
     }
+
+    animation: slideInTitle 0.5s ease-in;
   }
   .info-user {
     display: flex;

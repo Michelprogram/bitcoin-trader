@@ -70,31 +70,6 @@ export default defineComponent({
       glare: true,
     });
   },
-  /*   methods: {
-    hoverEffect(event: MouseEvent, index: Number) {
-      const card: HTMLElement = document.querySelector(
-        `.card[data-index='${index}'`
-      ) as HTMLElement;
-      const [height, width] = [card.offsetWidth, card.offsetHeight];
-      const [x, y] = [event.offsetX, event.offsetY];
-      const [halfHeight, halfWidth] = [height / 2, width / 2];
-      const [rotateX, rotateY] = [
-        ((x - halfWidth) / halfWidth) * 10,
-        ((y - halfHeight) / halfHeight) * 10,
-      ];
-      card.style.transition = "";
-      card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    },
-
-    leaveEffect(index: Number) {
-      const card: HTMLElement = document.querySelector(
-        `.card[data-index='${index}'`
-      ) as HTMLElement;
-
-      card.style.transition = "transform 2s";
-      card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-    },
-  }, */
 });
 </script>
 <style lang="scss" scoped>
@@ -136,6 +111,7 @@ export default defineComponent({
     display: flex;
     flex-direction: column;
     gap: 20px;
+    transform-style: preserve-3d;
 
     .header {
       text-align: right;
@@ -148,12 +124,6 @@ export default defineComponent({
       font-size: $size2;
       text-align: center;
       background-color: hsla(0, 0%, 0%, 0.721);
-      transform-style: preserve-3d;
-      transform: translate3d(0px, 0px, 0px);
-
-      &:hover {
-        transform: translate3d(0px, 0px, 100px);
-      }
     }
     .c-info {
       display: flex;
