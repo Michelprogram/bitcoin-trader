@@ -1,15 +1,15 @@
 <template>
-  <div class="parent"></div>
+  <div class="parent">
+    <Card />
+  </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "@vue/runtime-core";
-import Header from "../components/Header/Header.vue";
-import Overview from "@/components/Trading/Overview/Overview.vue";
-import Market from "@/components/Trading/Market/Market.vue";
 
+import Card from "@/components/wallet/Cards.vue";
 export default defineComponent({
   name: "Wallet",
-  components: { Header, Overview, Market },
+  components: { Card },
 });
 </script>
 <style lang="scss" scoped>

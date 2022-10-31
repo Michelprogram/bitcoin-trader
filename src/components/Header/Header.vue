@@ -23,7 +23,7 @@ export default defineComponent({
   },
   watch: {
     $route(to, from) {
-      this.title = from.name;
+      this.title = to.name;
     },
   },
   components: { Onglet, Profil },

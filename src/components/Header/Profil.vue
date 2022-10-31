@@ -43,6 +43,12 @@ export default defineComponent({
   .logo {
     transform: translateY(-10px);
     width: 60px;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-12px);
+    }
   }
 
   .info-user {
